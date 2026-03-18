@@ -84,12 +84,12 @@ export default function Planner() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
           {/* Left Panel: Inputs */}
-          <div className="w-full lg:w-[380px] shrink-0 sticky top-24">
+          <div className="w-full lg:w-[380px] shrink-0 relative lg:sticky lg:top-24">
             <InputPanel />
           </div>
           
           {/* Right Panel: Outputs */}
-          <div className="w-full lg:flex-1 min-w-0">
+          <div id="results-panel" className="w-full lg:flex-1 min-w-0 scroll-mt-24">
             <OutputPanel 
               results={results} 
               params={params}

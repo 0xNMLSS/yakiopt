@@ -155,7 +155,10 @@ export default function InputPanel() {
           {t('common.reset')}
         </button>
         <button
-          onClick={() => {}}
+          onClick={() => {
+            const el = document.getElementById('results-panel');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
           className="flex-[2] bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-red-500/30 transition-all hover:shadow-red-500/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
         >
           {t('common.calculate')}
