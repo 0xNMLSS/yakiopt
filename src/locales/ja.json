@@ -50,10 +50,12 @@
       }
     },
     "results": {
-      "title": "あなたの攻略プラン",
-      "kappaLabel": "キムチ定数",
-      "kappaSub": "満足度を最大化させるための黄金のリズム",
-      "placeholder": "変数を調整し「攻略を計算する」をクリックして、最適な焼肉プランを表示してください"
+      "title": "あなたの攻略法",
+      "kappaLabel": "キムチ定数 (Kimchi Constant)",
+      "kappaSub": "最大の満足感を得るための最適リズム",
+      "phasesTitle": "実行フェーズ",
+      "chartsTitle": "パフォーマンス指標",
+      "placeholder": "上のパラメーターを調整して「計算する」をクリックすると、最適な焼肉戦略が表示されます"
     },
     "phases": {
       "I": {
@@ -89,6 +91,14 @@
       "stomach": "食欲の限界（胃容量）",
       "fatigue": "脂っこさの限界（胃もたれ）",
       "time": "時間制限"
+    },
+    "charts": {
+      "loadingData": "データ読み込み中...",
+      "fatigueVsUtility": "疲労度と効用 (Fatigue vs Utility)",
+      "utilityVsGrill": "効用と網の状態 (Utility vs Grill Quality)",
+      "fatigue": "疲労度 (Fatigue)",
+      "utility": "効用 (Utility)",
+      "grillQuality": "網の綺麗さ"
     }
   }
 }

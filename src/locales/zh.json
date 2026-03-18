@@ -51,9 +51,11 @@
     },
     "results": {
       "title": "你的攻略方案",
-      "kappaLabel": "泡菜常数",
-      "kappaSub": "实现满足感最大化的最佳节奏",
-      "placeholder": "调整参数并点击“生成攻略”，查看你的最佳烧肉方案"
+      "kappaLabel": "泡菜常数 (Kimchi Constant)",
+      "kappaSub": "实现最大满足感的最佳进食节奏",
+      "phasesTitle": "战术执行阶段",
+      "chartsTitle": "图表指标分析",
+      "placeholder": "调整上方参数并点击「生成策略」，即可查看您的专属烧肉攻略"
     },
     "phases": {
       "I": {
@@ -89,6 +91,14 @@
       "stomach": "食欲上限",
       "fatigue": "腻感爆发 (油腻度)",
       "time": "时间限制"
+    },
+    "charts": {
+      "loadingData": "正在加载图表数据...",
+      "fatigueVsUtility": "腻感与边际效用 (Fatigue vs Utility)",
+      "utilityVsGrill": "边际效用与烤网状态 (Utility vs Grill Quality)",
+      "fatigue": "腻感 (Fatigue)",
+      "utility": "效用 (Utility)",
+      "grillQuality": "烤网洁净度"
     }
   }
 }

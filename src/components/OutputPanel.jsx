@@ -56,10 +56,33 @@ export default function OutputPanel({ results }) {
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-red-200/30 dark:bg-red-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6">
-        {results.policy.map((phase, idx) => (
-          <StrategyCard key={idx} phase={phase} />
-        ))}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="space-y-6">
+          <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+            {t('results.phasesTitle', 'Execution Phases')}
+          </h3>
+          <div className="space-y-6">
+            {results.policy.map((phase, idx) => (
+              <StrategyCard key={idx} phase={phase} />
+            ))}
+          </div>
+        </div>
+        
+        <div className="space-y-6">
+          <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+            {t('results.chartsTitle', 'Performance Metrics')}
+          </h3>
+          <div className="space-y-6">
+            <FatigueChart 
+              fatigueTrace={results.fatigueTrace} 
+              utilityTrace={results.utilityTrace}
+            />
+            <UtilityChart 
+              utilityTrace={results.utilityTrace}
+              grillTrace={results.grillTrace}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

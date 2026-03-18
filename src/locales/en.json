@@ -53,6 +53,8 @@
       "title": "Your Strategy",
       "kappaLabel": "Kimchi Constant",
       "kappaSub": "Optimal rhythm for maximum satisfaction",
+      "phasesTitle": "Execution Phases",
+      "chartsTitle": "Performance Metrics",
       "placeholder": "Adjust parameters and click \"Calculate\" to see your optimal yakiniku strategy"
     },
     "phases": {
@@ -89,6 +91,14 @@
       "stomach": "Stomach Capacity",
       "fatigue": "Meat Fatigue (Oiliness)",
       "time": "Time Limit"
+    },
+    "charts": {
+      "loadingData": "Loading data...",
+      "fatigueVsUtility": "Fatigue vs Utility Over Time",
+      "utilityVsGrill": "Utility vs Grill Quality",
+      "fatigue": "Fatigue",
+      "utility": "Utility",
+      "grillQuality": "Grill Quality"
     }
   }
 }
