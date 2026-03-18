@@ -1,11 +1,14 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSessionStore } from '../store/useSessionStore';
 import { Link } from 'react-router-dom';
 import InputPanel from '../components/InputPanel';
 import OutputPanel from '../components/OutputPanel';
 import ThemeToggle from '../components/ThemeToggle';
+import LanguageSelector from '../components/LanguageSelector';
 
 export default function Planner() {
+  const { t } = useTranslation();
   const { params, results, runSimulation, setParam } = useSessionStore();
 
   // Load params from URL hash on mount
@@ -62,14 +65,17 @@ export default function Planner() {
               Y
             </div>
             <span className="text-xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
-              YakiOpt
+              {t('common.appTitle')}
             </span>
           </Link>
-          <div className="flex items-center gap-4">
-            <Link to="/paper" className="text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 font-semibold text-sm transition-colors py-2 px-4 rounded-lg hover:bg-red-50 dark:hover:bg-red-500/10">
-              Read the Paper
+          <div className="flex items-center gap-2 sm:gap-4">
+            <Link to="/paper" className="hidden sm:block text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 font-semibold text-sm transition-colors py-2 px-4 rounded-lg hover:bg-red-50 dark:hover:bg-red-500/10">
+              {t('common.readPaper')}
             </Link>
-            <ThemeToggle />
+            <div className="flex items-center gap-2">
+              <LanguageSelector />
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </header>

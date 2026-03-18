@@ -1,0 +1,94 @@
+{
+  "translation": {
+    "common": {
+      "appTitle": "YakiOpt",
+      "tagline": "Optimal Yakiniku Strategy",
+      "calculate": "Calculate My Strategy",
+      "readPaper": "Read the Paper",
+      "reset": "Reset",
+      "backHome": "Go Back Home",
+      "tip": "Tip",
+      "bottleneck": "Main bottleneck",
+      "focus": "Focus",
+      "order": "Order",
+      "avoid": "Avoid"
+    },
+    "hero": {
+      "title": "Master the <1>Kimchi Constant</1>",
+      "subtitle": "The mathematical solution to the \"All-You-Can-Eat\" yakiniku fatigue problem. Eat smarter, not just harder.",
+      "basedOn": "Based on the κ Engineering Specification"
+    },
+    "planner": {
+      "settings": {
+        "title": "Session Settings",
+        "description": "Dial in your yakiniku parameters to generate the perfect strategy.",
+        "environment": "Environment",
+        "userGroup": "You & Your Group"
+      },
+      "params": {
+        "grillSpeed": "Grill Speed",
+        "serveDelay": "Serve Delay",
+        "timeLimit": "Time Limit (minutes)",
+        "fattyRatio": "Fatty Meat Ratio",
+        "appetite": "Appetite Level",
+        "fatigueSensitivity": "Fatigue Sensitivity",
+        "eatingSpeed": "Eating Speed",
+        "groupSize": "Group Size"
+      },
+      "options": {
+        "slow": "Slow",
+        "medium": "Medium",
+        "fast": "Fast",
+        "low": "Low",
+        "high": "High",
+        "small": "Small",
+        "large": "Large",
+        "fastService": "Fast Service",
+        "slowService": "Slow Service",
+        "ironStomach": "Iron Stomach",
+        "oilyFast": "Get oily fast"
+      }
+    },
+    "results": {
+      "title": "Your Strategy",
+      "kappaLabel": "Kimchi Constant",
+      "kappaSub": "Optimal rhythm for maximum satisfaction",
+      "placeholder": "Adjust parameters and click \"Calculate\" to see your optimal yakiniku strategy"
+    },
+    "phases": {
+      "I": {
+        "title": "Phase I: Exploitation",
+        "label": "Exploitation",
+        "tip": "Pure aggression. No palate resets yet — Fatigue is still low."
+      },
+      "II": {
+        "title": "Phase II: Maintenance",
+        "label": "Maintenance",
+        "kimchiDesc": "Consume Kimchi every {{kappa}} meat servings",
+        "tip": "Insert kimchi every {{kappa}} meat portions. Reorder before finishing current batch."
+      },
+      "III": {
+        "title": "Phase III: Graceful Exit",
+        "label": "Graceful Exit",
+        "tip": "Monitor marginal utility. Stop when next piece costs more than it returns."
+      }
+    },
+    "food": {
+      "wagyu": "Wagyu",
+      "karubi": "Karubi",
+      "harami": "Harami",
+      "tontoro": "Tontoro",
+      "tan": "Ox Tongue",
+      "rice": "Rice",
+      "soda": "Soda",
+      "salad": "Salad",
+      "kimchi": "Kimchi",
+      "vegetables": "Vegetables"
+    },
+    "bottlenecks": {
+      "stomach": "Stomach Capacity",
+      "fatigue": "Meat Fatigue (Oiliness)",
+      "time": "Time Limit"
+    }
+  }
+}

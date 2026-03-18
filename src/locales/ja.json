@@ -1,0 +1,94 @@
+{
+  "translation": {
+    "common": {
+      "appTitle": "YakiOpt (ヤキオプト)",
+      "tagline": "焼肉の最適解を弾き出す",
+      "calculate": "攻略を計算する",
+      "readPaper": "研究論文を読む",
+      "reset": "リセット",
+      "backHome": "ホームに戻る",
+      "tip": "アドバイス",
+      "bottleneck": "満足を阻害する主な要因",
+      "focus": "重点",
+      "order": "順番",
+      "avoid": "回避"
+    },
+    "hero": {
+      "title": "<1>キムチ定数 (κ)</1> を極める",
+      "subtitle": "食べ放題における「脂っこさ」という難題に数学的解法を。根性ではなく、科学で美味しく。",
+      "basedOn": "κ エンジニアリング仕様に基づき開発"
+    },
+    "planner": {
+      "settings": {
+        "title": "セッション設定",
+        "description": "焼肉を構成する各変数（パラメータ）を入力し、あなただけの最適攻略プランを作成します。",
+        "environment": "レストラン環境",
+        "userGroup": "自分のステータス / 同行者"
+      },
+      "params": {
+        "grillSpeed": "火力の強さ",
+        "serveDelay": "提供の速さ",
+        "timeLimit": "時間制限 (分)",
+        "fattyRatio": "脂身の割合",
+        "appetite": "食欲の強さ",
+        "fatigueSensitivity": "脂っこさへの耐性",
+        "eatingSpeed": "食べるスピード",
+        "groupSize": "同行人数"
+      },
+      "options": {
+        "slow": "弱火",
+        "medium": "標準",
+        "fast": "強火",
+        "low": "爆速提供",
+        "high": "提供に時間がかかる",
+        "small": "少食",
+        "large": "大食い",
+        "fastService": "早い提供",
+        "slowService": "遅い提供",
+        "ironStomach": "鉄の胃袋",
+        "oilyFast": "脂っこさに弱い"
+      }
+    },
+    "results": {
+      "title": "あなたの攻略プラン",
+      "kappaLabel": "キムチ定数",
+      "kappaSub": "満足度を最大化させるための黄金のリズム",
+      "placeholder": "変数を調整し「攻略を計算する」をクリックして、最適な焼肉プランを表示してください"
+    },
+    "phases": {
+      "I": {
+        "title": "フェーズ I: 圧倒的火力 (Exploitation)",
+        "label": "開拓期",
+        "tip": "攻めの姿勢を崩さない。疲労感はまだ低く、リセットは不要です。"
+      },
+      "II": {
+        "title": "フェーズ II: リズムの維持 (Maintenance)",
+        "label": "維持期",
+        "kimchiDesc": "肉 {{kappa}} 皿おきにキムチを摂取",
+        "tip": "肉 {{kappa}} 回おきにキムチを挟みましょう。次の肉が届く前に先読み注文を。"
+      },
+      "III": {
+        "title": "フェーズ III: 優雅な撤退 (Graceful Exit)",
+        "label": "完結期",
+        "tip": "限界効用を意識してください。一口の不快感が喜びを上回ったら、そこで終了です。"
+      }
+    },
+    "food": {
+      "wagyu": "和牛",
+      "karubi": "カルビ",
+      "harami": "ハラミ",
+      "tontoro": "豚トロ",
+      "tan": "タン",
+      "rice": "ご飯",
+      "soda": "ドリンク",
+      "salad": "サラダ",
+      "kimchi": "キムチ",
+      "vegetables": "野菜"
+    },
+    "bottlenecks": {
+      "stomach": "食欲の限界（胃容量）",
+      "fatigue": "脂っこさの限界（胃もたれ）",
+      "time": "時間制限"
+    }
+  }
+}

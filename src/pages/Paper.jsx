@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ThemeToggle from '../components/ThemeToggle';
+import LanguageSelector from '../components/LanguageSelector';
 
 export default function Paper() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-orange-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 flex flex-col items-center justify-center px-6 py-12 relative overflow-hidden transition-colors duration-500">
-      {/* Theme Toggle Positioned Top-Right */}
-      <div className="absolute top-6 right-6 z-50">
+      {/* Settings Positioned Top-Right */}
+      <div className="absolute top-6 right-6 z-50 flex items-center gap-3">
+        <LanguageSelector />
         <ThemeToggle />
       </div>
 
@@ -17,10 +22,10 @@ export default function Paper() {
           📄
         </div>
         <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 mb-6 tracking-tight">
-          The Kimchi Constant Paper
+          {t('common.readPaper')}
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-lg mx-auto leading-relaxed font-medium">
-          Read the full research and mathematical foundations behind YakiOpt's algorithms.
+          {t('hero.subtitle')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
@@ -29,13 +34,13 @@ export default function Paper() {
             rel="noopener noreferrer"
             className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold py-3.5 px-8 rounded-full shadow-lg shadow-blue-500/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 transform ring-2 ring-white ring-offset-2 ring-offset-transparent"
           >
-            View Paper on Notion
+            {t('common.readPaper')} (Notion)
           </a>
           <Link
             to="/"
             className="w-full sm:w-auto bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 text-gray-700 dark:text-gray-200 font-bold py-3.5 px-8 rounded-full border border-gray-200 dark:border-slate-700 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 transform"
           >
-            Go Back Home
+            {t('common.backHome')}
           </Link>
         </div>
 

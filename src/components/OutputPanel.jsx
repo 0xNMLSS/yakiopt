@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { KappaGauge } from './OutputPanel/KappaGauge.jsx';
 import { PhaseTimeline } from './OutputPanel/PhaseTimeline.jsx';
 import { StrategyCard } from './OutputPanel/StrategyCard.jsx';
@@ -5,10 +6,12 @@ import { FatigueChart } from './OutputPanel/FatigueChart.jsx';
 import { UtilityChart } from './OutputPanel/UtilityChart.jsx';
 
 export default function OutputPanel({ results }) {
+  const { t } = useTranslation();
+
   if (!results) {
     return (
       <div className="text-center py-12">
-        <p className="text-gray-500">Adjust parameters and click "Run Simulation" to see your optimal yakiniku strategy</p>
+        <p className="text-gray-500">{t('results.placeholder')}</p>
       </div>
     );
   }
@@ -22,7 +25,7 @@ export default function OutputPanel({ results }) {
             <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-500/20 flex items-center justify-center text-xl">
               🎯
             </div>
-            <h2 className="text-2xl font-black text-red-700 dark:text-red-400 tracking-tight">Your Strategy</h2>
+            <h2 className="text-2xl font-black text-red-700 dark:text-red-400 tracking-tight">{t('results.title')}</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -30,9 +33,9 @@ export default function OutputPanel({ results }) {
               <div className="flex items-center gap-4">
                 <KappaGauge kappa={results.kappa.toFixed(2)} />
                 <div>
-                  <div className="text-sm font-bold text-red-600 dark:text-red-400 uppercase tracking-widest mb-1">Kimchi Constant</div>
+                  <div className="text-sm font-bold text-red-600 dark:text-red-400 uppercase tracking-widest mb-1">{t('results.kappaLabel')}</div>
                   <div className="text-3xl font-black text-gray-900 dark:text-white leading-none">κ = {results.kappa.toFixed(2)}</div>
-                  <p className="text-xs text-[var(--text-muted)] mt-2 font-medium">Optimal rhythm for maximum satisfaction</p>
+                  <p className="text-xs text-[var(--text-muted)] mt-2 font-medium">{t('results.kappaSub')}</p>
                 </div>
               </div>
             </div>
@@ -41,8 +44,8 @@ export default function OutputPanel({ results }) {
               <div className="flex items-start gap-3">
                 <span className="text-lg">⚠️</span>
                 <div>
-                  <div className="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase">Main bottleneck</div>
-                  <div className="text-md font-bold text-gray-800 dark:text-gray-200 mt-1 leading-tight">{results.bottleneck}</div>
+                  <div className="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase">{t('common.bottleneck')}</div>
+                  <div className="text-md font-bold text-gray-800 dark:text-gray-200 mt-1 leading-tight">{t(`bottlenecks.${results.bottleneck}`)}</div>
                 </div>
               </div>
             </div>
@@ -54,7 +57,7 @@ export default function OutputPanel({ results }) {
       </div>
 
       <div className="grid grid-cols-1 gap-6">
-        {results.phases.map((phase, idx) => (
+        {results.policy.map((phase, idx) => (
           <StrategyCard key={idx} phase={phase} />
         ))}
       </div>
