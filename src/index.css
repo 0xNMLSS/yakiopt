@@ -6,13 +6,29 @@
 }
 
 @layer base {
+  :root {
+    --bg-main: #FAFAFA;
+    --bg-card: #FFFFFF;
+    --text-main: #1F2937;
+    --text-muted: #6B7280;
+    --border-color: #E5E7EB;
+  }
+
+  .dark {
+    --bg-main: #0F172A;
+    --bg-card: #1E293B;
+    --text-main: #F1F5F9;
+    --text-muted: #94A3B8;
+    --border-color: #334155;
+  }
+
   body {
-    @apply font-sans antialiased text-gray-800 selection:bg-red-200 selection:text-red-900;
+    @apply font-sans antialiased bg-[var(--bg-main)] text-[var(--text-main)] transition-colors duration-300;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/70 backdrop-blur-md border border-white/40 shadow-xl;
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-white/40 dark:border-slate-800/40 shadow-xl;
   }
 }

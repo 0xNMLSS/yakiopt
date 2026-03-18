@@ -3,6 +3,7 @@ import { useSessionStore } from '../store/useSessionStore';
 import { Link } from 'react-router-dom';
 import InputPanel from '../components/InputPanel';
 import OutputPanel from '../components/OutputPanel';
+import ThemeToggle from '../components/ThemeToggle';
 
 export default function Planner() {
   const { params, results, runSimulation, setParam } = useSessionStore();
@@ -52,9 +53,9 @@ export default function Planner() {
        runSimulation]);
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] text-gray-800">
+    <div className="min-h-screen bg-[var(--bg-main)] text-[var(--text-main)] transition-colors duration-300">
       {/* Sleek App Header */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <header className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200 dark:border-slate-800 sticky top-0 z-50 shadow-sm transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-red-600 to-orange-500 flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
@@ -64,11 +65,12 @@ export default function Planner() {
               YakiOpt
             </span>
           </Link>
-          <nav>
-            <Link to="/paper" className="text-gray-500 hover:text-red-500 font-semibold text-sm transition-colors py-2 px-4 rounded-lg hover:bg-red-50">
+          <div className="flex items-center gap-4">
+            <Link to="/paper" className="text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 font-semibold text-sm transition-colors py-2 px-4 rounded-lg hover:bg-red-50 dark:hover:bg-red-500/10">
               Read the Paper
             </Link>
-          </nav>
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 

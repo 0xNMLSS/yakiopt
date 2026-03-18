@@ -15,57 +15,48 @@ export default function OutputPanel({ results }) {
 
   return (
     <div className="space-y-8">
-      {/* Header with Kappa */}
-      <div className="flex flex-col items-center text-center space-y-4">
-        <KappaGauge kappa={results.kappa} />
-        <p className="text-lg text-gray-600">Your personal Kimchi Constant (κ)</p>
-      </div>
-      
-      {/* Main content grid */}
-      <div className="grid gap-6 md:grid-cols-2">
-        {/* Left Column */}
-        <div className="space-y-6">
-          <PhaseTimeline 
-            phaseBreaks={results.phaseBreaks} 
-            stoppingPoint={results.stoppingPoint}
-          />
+      {/* Results Summary with premium styling */}
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-red-50/90 to-orange-50/90 dark:from-red-900/20 dark:to-orange-900/20 border border-red-100 dark:border-red-900/30 p-8 shadow-sm backdrop-blur-md">
+        <div className="relative z-10">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-full bg-red-100 dark:bg-red-500/20 flex items-center justify-center text-xl">
+              🎯
+            </div>
+            <h2 className="text-2xl font-black text-red-700 dark:text-red-400 tracking-tight">Your Strategy</h2>
+          </div>
           
-          {/* Strategy Cards */}
-          <div className="space-y-4">
-            {results.policy.map((phase, index) => (
-              <StrategyCard 
-                key={index} 
-                phase={phase} 
-                kappa={results.kappa}
-              />
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <div className="flex items-center gap-4">
+                <KappaGauge kappa={results.kappa.toFixed(2)} />
+                <div>
+                  <div className="text-sm font-bold text-red-600 dark:text-red-400 uppercase tracking-widest mb-1">Kimchi Constant</div>
+                  <div className="text-3xl font-black text-gray-900 dark:text-white leading-none">κ = {results.kappa.toFixed(2)}</div>
+                  <p className="text-xs text-[var(--text-muted)] mt-2 font-medium">Optimal rhythm for maximum satisfaction</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex flex-col justify-center gap-4 bg-white/50 dark:bg-slate-900/50 rounded-2xl p-5 border border-white/50 dark:border-slate-800/50">
+              <div className="flex items-start gap-3">
+                <span className="text-lg">⚠️</span>
+                <div>
+                  <div className="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase">Main bottleneck</div>
+                  <div className="text-md font-bold text-gray-800 dark:text-gray-200 mt-1 leading-tight">{results.bottleneck}</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         
-        {/* Right Column */}
-        <div className="space-y-6">
-          <FatigueChart 
-            fatigueTrace={results.fatigueTrace} 
-            utilityTrace={results.utilityTrace}
-          />
-          <UtilityChart 
-            utilityTrace={results.utilityTrace}
-            grillTrace={results.grillTrace}
-          />
-        </div>
+        {/* Background glow for summary */}
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-red-200/30 dark:bg-red-500/10 rounded-full blur-3xl"></div>
       </div>
-      
-      {/* Summary section */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-red-50/90 to-orange-50/90 border border-red-100 p-8 shadow-sm backdrop-blur-md">
-        <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-red-500 to-orange-500"></div>
-        <h3 className="text-xl font-extrabold text-red-800 mb-3 flex items-center gap-2">
-          <span>💡</span> Strategy Summary
-        </h3>
-        <p className="text-red-900 leading-relaxed font-medium text-lg">{results.summaryText}</p>
-        <div className="mt-5 inline-flex items-center gap-3 bg-white/70 backdrop-blur-sm px-4 py-2.5 rounded-xl border border-red-100 shadow-sm">
-          <span className="text-xs font-bold text-red-400 uppercase tracking-wider">Main Bottleneck</span>
-          <span className="font-bold text-red-600 tracking-tight">{results.bottleneck}</span>
-        </div>
+
+      <div className="grid grid-cols-1 gap-6">
+        {results.phases.map((phase, idx) => (
+          <StrategyCard key={idx} phase={phase} />
+        ))}
       </div>
     </div>
   );
