@@ -1,16 +1,59 @@
-# React + Vite
+# YakiOpt
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A strategy calculator for optimizing your all-you-can-eat yakiniku experience based on the Kimchi Constant (κ = 2.72).
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Deployed on Vercel: https://yakiopt.vercel.app
 
-## React Compiler
+## Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Install dependencies
+pnpm install
 
-## Expanding the ESLint configuration
+# Start development server
+pnpm dev
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Build for production
+pnpm build
+```
+
+## Technology Stack
+
+- React + Vite
+- Tailwind CSS
+- Recharts (for data visualization)
+- Zustand (state management)
+- React Router v6
+- Vercel (deployment)
+
+## Features
+
+- Pure frontend application (zero backend, zero cost)
+- Shareable strategy via URL parameters
+- Responsive design
+- Interactive charts showing fatigue and utility over time
+- Personalized Kimchi Constant calculation
+- Phase-based strategy recommendations
+
+## Engine
+
+The core strategy engine (`src/engine/`) consists of pure JavaScript functions:
+- `constants.js`: Kimchi Constant calculations
+- `fatigue.js`: Fatigue simulation
+- `utility.js`: Enjoyment/utility simulation
+- `grill.js`: Grill quality degradation model
+- `scheduler.js`: Phase-based policy generator
+- `index.js`: Main simulation runner
+
+## Deployment
+
+Deployed to Vercel with zero configuration needed:
+1. Push to GitHub
+2. Import project in Vercel
+3. Set build command: `pnpm build`
+4. Set output directory: `dist`
+5. Deploy!
+
+The Vercel free tier is more than sufficient for this static application.
