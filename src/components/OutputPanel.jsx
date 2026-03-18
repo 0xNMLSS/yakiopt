@@ -4,7 +4,7 @@ import { StrategyCard } from './OutputPanel/StrategyCard.jsx';
 import { FatigueChart } from './OutputPanel/FatigueChart.jsx';
 import { UtilityChart } from './OutputPanel/UtilityChart.jsx';
 
-export default function OutputPanel({ results, params }) {
+export default function OutputPanel({ results }) {
   if (!results) {
     return (
       <div className="text-center py-12">
@@ -56,12 +56,16 @@ export default function OutputPanel({ results, params }) {
       </div>
       
       {/* Summary section */}
-      <div className="bg-red-50 border-l-4 border-red-500 p-6">
-        <h3 className="text-lg font-semibold text-red-800 mb-2">Strategy Summary</h3>
-        <p className="text-red-700">{results.summaryText}</p>
-        <p className="mt-2 text-sm text-gray-500">
-          Main bottleneck: <span className="font-medium">{results.bottleneck}</span>
-        </p>
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-red-50/90 to-orange-50/90 border border-red-100 p-8 shadow-sm backdrop-blur-md">
+        <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-red-500 to-orange-500"></div>
+        <h3 className="text-xl font-extrabold text-red-800 mb-3 flex items-center gap-2">
+          <span>💡</span> Strategy Summary
+        </h3>
+        <p className="text-red-900 leading-relaxed font-medium text-lg">{results.summaryText}</p>
+        <div className="mt-5 inline-flex items-center gap-3 bg-white/70 backdrop-blur-sm px-4 py-2.5 rounded-xl border border-red-100 shadow-sm">
+          <span className="text-xs font-bold text-red-400 uppercase tracking-wider">Main Bottleneck</span>
+          <span className="font-bold text-red-600 tracking-tight">{results.bottleneck}</span>
+        </div>
       </div>
     </div>
   );

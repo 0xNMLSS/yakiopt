@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { useSessionStore } from '../store/useSessionStore';
+import { Link } from 'react-router-dom';
 import InputPanel from '../components/InputPanel';
 import OutputPanel from '../components/OutputPanel';
 
 export default function Planner() {
-  const { params, results, runSimulation, setParam, resetToDefaults } = useSessionStore();
+  const { params, results, runSimulation, setParam } = useSessionStore();
 
   // Load params from URL hash on mount
   useEffect(() => {
@@ -51,23 +52,43 @@ export default function Planner() {
        runSimulation]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col md:flex-row gap-8">
+    <div className="min-h-screen bg-[#FAFAFA] text-gray-800">
+      {/* Sleek App Header */}
+      <header className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-red-600 to-orange-500 flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
+              Y
+            </div>
+            <span className="text-xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
+              YakiOpt
+            </span>
+          </Link>
+          <nav>
+            <Link to="/paper" className="text-gray-500 hover:text-red-500 font-semibold text-sm transition-colors py-2 px-4 rounded-lg hover:bg-red-50">
+              Read the Paper
+            </Link>
+          </nav>
+        </div>
+      </header>
+
+      {/* Main Grid Layout */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
           {/* Left Panel: Inputs */}
-          <div className="w-full md:w-1/3 space-y-6">
+          <div className="w-full lg:w-[380px] shrink-0 sticky top-24">
             <InputPanel />
           </div>
           
           {/* Right Panel: Outputs */}
-          <div className="w-full md:w-2/3 space-y-6">
+          <div className="w-full lg:flex-1 min-w-0">
             <OutputPanel 
               results={results} 
               params={params}
             />
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
